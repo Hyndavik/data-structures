@@ -1,0 +1,37 @@
+#include <stdio.h> 
+
+int main() 
+{ 
+    int A[10][10], B[10][10], C[10][10]; 
+    int i, j, k; 
+  
+    // Taking input from user 
+    printf("Enter elements of first matrix\n"); 
+    for (i = 0; i < 3; i++) 
+        for (j = 0; j < 3; j++) 
+            scanf("%d", &A[i][j]); 
+  
+    printf("Enter elements of second matrix\n"); 
+    for (i = 0; i < 3; i++) 
+        for (j = 0; j < 3; j++) 
+            scanf("%d", &B[i][j]); 
+  
+    // Multiplying matrices A and B and 
+    // storing result in C 
+    for (i = 0; i < 3; i++) { 
+        for (j = 0; j < 3; j++) { 
+            C[i][j] = 0; 
+            for (k = 0; k < 3; k++) 
+                C[i][j] += A[i][k] * B[k][j]; 
+        } 
+    } 
+  
+    // Displaying resultant matrix C 
+    printf("Product of two matrices A and  B : \n"); 
+    for (i = 0; i < 3; i++) { 
+        for (j = 0; j < 3; j++) 
+            printf("%d\t", C[i][j]); 
+        printf("\n"); 
+    } 
+    return 0; 
+}
